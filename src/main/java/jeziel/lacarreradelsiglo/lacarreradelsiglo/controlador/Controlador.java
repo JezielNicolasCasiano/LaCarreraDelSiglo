@@ -94,6 +94,16 @@ public class Controlador implements Initializable, AnimalListener {
         t4.setDaemon(true);
         t3.start();
         t4.start();
+        caminoConejo.setText("");
+        caminoConejo.setText("");
+        capibaraImagen1.setVisible(false);
+        capibaraImagen2.setVisible(false);
+        capibaraImagen2.setX(0);
+        capibaraImagen2.setX(0);
+        conejoImagen.setX(0);
+        tortugaImagen.setX(0);
+
+
     }
 
 }
