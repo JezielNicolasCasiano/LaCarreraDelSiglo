@@ -1,0 +1,43 @@
+/* 1. IMPORTAR LA FUENTE */
+@font-face {
+    font-family: 'League Spartan';
+    /* Asegúrate de que el nombre del archivo coincida exactamente */
+    src: url('LeagueSpartan-Bold.ttf');
+}
+
+/* 2. EL TÍTULO ESTILO MEME */
+#titulo {
+    -fx-font-family: 'League Spartan';
+    -fx-font-size: 65px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    /* Efecto de borde negro grueso (Stroke de meme) */
+    -fx-effect: dropshadow(three-pass-box, black, 5, 1.0, 0, 0);
+}
+
+/* 3. ETIQUETAS DE GANADOR (Fuente normal, más grandes) */
+.label-grande {
+    -fx-font-family: 'League Spartan';
+    -fx-font-size: 30px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* 4. BOTÓN "RACING" (Formato sugerido) */
+.boton-empezar {
+    -fx-background-color: #e67e22; /* Naranja deportivo */
+    -fx-background-radius: 50;
+    -fx-text-fill: white;
+    -fx-font-family: 'System';
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-padding: 10 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+}
+
+.boton-empezar:hover {
+    -fx-background-color: #d35400;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
