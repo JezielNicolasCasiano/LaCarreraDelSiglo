@@ -16,21 +16,26 @@ import java.util.ResourceBundle;
 public class Controlador implements Initializable, AnimalListener {
     Animal conejo;
     Animal tortuga;
+    StringBuilder sb;
     private final Map<String, ImageView> imagenesCompetidores = new HashMap<>();
+    private final Map<String, Label> caminoCompetidores = new HashMap<>();
 
     @FXML
     private Label ganador;
     @FXML
-    private Button empezar;
-    @FXML
     private ImageView conejoImagen;
     @FXML
     private ImageView tortugaImagen;
+    @FXML
+    private Label caminoConejo;
+    @FXML
+    private Label caminoTortuga;
 
     @Override
     public void actualizarProgreso(String  nombre, int avance){
         Platform.runLater(()->{
             imagenesCompetidores.get(nombre).setX(avance);
+            caminoCompetidores.get(nombre).setText("*".repeat(Math.max(0,(int)avance/13)));
         });
     }
 
@@ -43,8 +48,11 @@ public class Controlador implements Initializable, AnimalListener {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         imagenesCompetidores.put("Conejo",conejoImagen);
         imagenesCompetidores.put("Tortuga", tortugaImagen);
+        caminoCompetidores.put("Conejo",caminoConejo);
+        caminoCompetidores.put("Tortuga", caminoTortuga);
         ganador.setText("");
         conejo = new Animal("Conejo", this);
         tortuga = new Animal("Tortuga", this);

@@ -18,7 +18,7 @@ public class Animal implements Runnable {
 
     @Override
     public void run() {
-        while (this.avance<=560){
+        while (this.avance<=571){
             this.avance+=random.nextInt(21);
             random.setSeed(random.nextLong());
             try {

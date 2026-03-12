@@ -58,6 +58,9 @@
                   <Image url="@Resources/meta.png" />
                </image>
             </ImageView>
+            <Line endX="-99.0" endY="-172.0" layoutX="841.0" layoutY="174.0" startX="-99.0" startY="174.0" />
+            <Label fx:id="caminoConejo" layoutX="173.0" layoutY="80.0" prefHeight="18.0" prefWidth="571.0" />
+            <Label fx:id="caminoTortuga" layoutX="173.0" layoutY="247.0" prefHeight="18.0" prefWidth="571.0" />
          </children>
       </Pane>
    </center>
@@ -70,9 +73,10 @@
    <bottom>
       <AnchorPane prefHeight="128.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="346.0" layoutY="45.0" prefHeight="52.0" prefWidth="132.0" styleClass="label-grande" text="Ganador:" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="346.0" AnchorPane.rightAnchor="522.0" AnchorPane.topAnchor="45.0" />
-            <Label fx:id="ganador" layoutX="481.0" layoutY="46.0" prefHeight="50.0" prefWidth="158.0" styleClass="label-grande" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="481.0" AnchorPane.rightAnchor="361.0" AnchorPane.topAnchor="46.0" />
-            <Button fx:id="empezar" layoutX="650.0" layoutY="47.0" mnemonicParsing="false" onAction="#clickEmpezar" prefHeight="49.0" prefWidth="161.0" styleClass="boton-empezar" text="Empezar" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="650.0" AnchorPane.rightAnchor="189.0" AnchorPane.topAnchor="47.0" />
+            <Label layoutX="148.0" layoutY="50.0" prefHeight="52.0" prefWidth="132.0" styleClass="label-grande" text="Ganador:" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="720.0" AnchorPane.topAnchor="50.0" />
+            <Label fx:id="ganador" layoutX="288.0" layoutY="51.0" prefHeight="50.0" prefWidth="158.0" styleClass="label-grande" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="554.0" AnchorPane.topAnchor="51.0" />
+            <Button fx:id="empezar" layoutX="517.0" layoutY="52.0" mnemonicParsing="false" onAction="#clickEmpezar" prefHeight="49.0" prefWidth="161.0" styleClass="boton-empezar" text="Empezar" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="517.0" AnchorPane.rightAnchor="322.0" AnchorPane.topAnchor="52.0" />
+            <Button fx:id="reiniciar" layoutX="699.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickEmpezar" prefHeight="49.0" prefWidth="161.0" styleClass="boton-empezar" text="Reiniciar" />
          </children>
       </AnchorPane>
    </bottom>
