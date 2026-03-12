@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="1000.0" stylesheets="@Resources/config.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeziel.lacarreradelsiglo.lacarreradelsiglo.controlador.Controlador">
    <top>
@@ -32,12 +33,12 @@
    <center>
       <Pane prefHeight="0.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="conejoImagen" fitHeight="125.0" fitWidth="73.0" layoutX="100.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="conejoImagen" fitHeight="125.0" fitWidth="73.0" layoutX="98.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Resources/conejo.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="tortugaImagen" fitHeight="94.0" fitWidth="153.0" layoutX="31.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="tortugaImagen" fitHeight="94.0" fitWidth="153.0" layoutX="34.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Resources/tortuga.png" />
                </image>
@@ -59,8 +60,22 @@
                </image>
             </ImageView>
             <Line endX="-99.0" endY="-172.0" layoutX="841.0" layoutY="174.0" startX="-99.0" startY="174.0" />
-            <Label fx:id="caminoConejo" layoutX="173.0" layoutY="80.0" prefHeight="18.0" prefWidth="571.0" />
-            <Label fx:id="caminoTortuga" layoutX="173.0" layoutY="247.0" prefHeight="18.0" prefWidth="571.0" />
+            <Label fx:id="caminoConejo" layoutX="173.0" layoutY="109.0" prefHeight="18.0" prefWidth="571.0">
+               <font>
+                  <Font name="Monospaced Regular" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="caminoTortuga" layoutX="173.0" layoutY="236.0" prefHeight="18.0" prefWidth="571.0" />
+            <ImageView fx:id="capibaraImagen1" fitHeight="101.0" fitWidth="132.0" layoutX="42.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Resources/capibara.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="capibaraImagen2" fitHeight="101.0" fitWidth="132.0" layoutX="42.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Resources/capibara.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </center>

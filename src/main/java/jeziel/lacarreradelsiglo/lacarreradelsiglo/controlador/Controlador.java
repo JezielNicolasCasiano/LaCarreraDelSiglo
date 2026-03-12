@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 public class Controlador implements Initializable, AnimalListener {
     Animal conejo;
     Animal tortuga;
+    Animal capibara1;
+    Animal capibara2;
     StringBuilder sb;
     private final Map<String, ImageView> imagenesCompetidores = new HashMap<>();
     private final Map<String, Label> caminoCompetidores = new HashMap<>();
@@ -27,6 +29,10 @@ public class Controlador implements Initializable, AnimalListener {
     @FXML
     private ImageView tortugaImagen;
     @FXML
+    private ImageView capibaraImagen1;
+    @FXML
+    private ImageView capibaraImagen2;
+    @FXML
     private Label caminoConejo;
     @FXML
     private Label caminoTortuga;
@@ -34,8 +40,12 @@ public class Controlador implements Initializable, AnimalListener {
     @Override
     public void actualizarProgreso(String  nombre, int avance){
         Platform.runLater(()->{
-            imagenesCompetidores.get(nombre).setX(avance);
-            caminoCompetidores.get(nombre).setText("*".repeat(Math.max(0,(int)avance/13)));
+            imagenesCompetidores.get(nombre).setTranslateX(avance);
+            if(Objects.equals(nombre, "Conejo") || Objects.equals(nombre, "Tortuga")){
+                caminoCompetidores.get(nombre).setText("*".repeat(Math.max(0,(int)avance/8)));
+            }else{
+                caminoCompetidores.get(nombre).setText(" ".repeat(Math.max(0,(int)avance/8)));
+            }
         });
     }
 
@@ -48,14 +58,22 @@ public class Controlador implements Initializable, AnimalListener {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        capibaraImagen1.setVisible(false);
+        capibaraImagen2.setVisible(false);
         imagenesCompetidores.put("Conejo",conejoImagen);
         imagenesCompetidores.put("Tortuga", tortugaImagen);
+        imagenesCompetidores.put("capibara1",capibaraImagen1);
+        imagenesCompetidores.put("capibara2",capibaraImagen1);
         caminoCompetidores.put("Conejo",caminoConejo);
         caminoCompetidores.put("Tortuga", caminoTortuga);
+        caminoCompetidores.put("capibara1",caminoConejo);
+        caminoCompetidores.put("capibara2", caminoTortuga);
         ganador.setText("");
         conejo = new Animal("Conejo", this);
         tortuga = new Animal("Tortuga", this);
+        capibara1 = new Animal("capibara1", this);
+        capibara2 = new Animal("capibara2", this);
+
     }
 
     @FXML
@@ -66,5 +84,16 @@ public class Controlador implements Initializable, AnimalListener {
         t2.start();
     }
 
+    @FXML
+    public void clickReiniciar(){
+        capibaraImagen1.setVisible(true);
+        capibaraImagen2.setVisible(true);
+        Thread t3 = new Thread(capibara1);
+        Thread t4 = new Thread(capibara2);
+        t3.setDaemon(true);
+        t4.setDaemon(true);
+        t3.start();
+        t4.start();
+    }
 
 }
