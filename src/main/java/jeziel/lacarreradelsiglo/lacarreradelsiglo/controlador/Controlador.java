@@ -46,8 +46,6 @@ public class Controlador implements Initializable, AnimalListener {
         imagenesCompetidores.put("Conejo",conejoImagen);
         imagenesCompetidores.put("Tortuga", tortugaImagen);
         ganador.setText("");
-        conejoImagen.setX(100);
-        tortugaImagen.setX(31);
         conejo = new Animal("Conejo", this);
         tortuga = new Animal("Tortuga", this);
     }
@@ -56,7 +54,8 @@ public class Controlador implements Initializable, AnimalListener {
     public void clickEmpezar(){
         Thread t1 = new Thread(conejo);
         Thread t2 = new Thread(tortuga);
-
+        t1.start();
+        t2.start();
     }
 
 

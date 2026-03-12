@@ -14,29 +14,15 @@ public class Animal implements Runnable {
         this.nombre = nombre;
         this.listener = listener;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getAvance() {
-        return avance;
-    }
-
-    public void setAvance(int avance) {
-        this.avance = avance;
-    }
+    
 
     @Override
     public void run() {
-        while (this.avance<=471){
+        while (this.avance<=560){
             this.avance+=random.nextInt(21);
+            random.setSeed(random.nextLong());
             try {
-                this.wait(300);
+                Thread.sleep(150);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

@@ -4,5 +4,6 @@ module jeziel.lacarreradelsiglo.lacarreradelsiglo {
 
 
     opens jeziel.lacarreradelsiglo.lacarreradelsiglo to javafx.fxml;
+    opens jeziel.lacarreradelsiglo.lacarreradelsiglo.controlador to javafx.fxml;
     exports jeziel.lacarreradelsiglo.lacarreradelsiglo;
 }
