@@ -18,7 +18,6 @@ public class Controlador implements Initializable, AnimalListener {
     Animal tortuga;
     Animal capibara1;
     Animal capibara2;
-    StringBuilder sb;
     private final Map<String, ImageView> imagenesCompetidores = new HashMap<>();
     private final Map<String, Label> caminoCompetidores = new HashMap<>();
 
@@ -60,6 +59,8 @@ public class Controlador implements Initializable, AnimalListener {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         capibaraImagen1.setVisible(false);
         capibaraImagen2.setVisible(false);
+        capibaraImagen1.setManaged(false);
+        capibaraImagen2.setManaged(false);
         imagenesCompetidores.put("Conejo",conejoImagen);
         imagenesCompetidores.put("Tortuga", tortugaImagen);
         imagenesCompetidores.put("capibara1",capibaraImagen1);
@@ -74,6 +75,7 @@ public class Controlador implements Initializable, AnimalListener {
         capibara1 = new Animal("capibara1", this);
         capibara2 = new Animal("capibara2", this);
 
+
     }
 
     @FXML
@@ -86,8 +88,12 @@ public class Controlador implements Initializable, AnimalListener {
 
     @FXML
     public void clickReiniciar(){
+        ganador.setText("");
+
         capibaraImagen1.setVisible(true);
         capibaraImagen2.setVisible(true);
+        capibaraImagen1.setManaged(true);
+        capibaraImagen2.setManaged(true);
         Thread t3 = new Thread(capibara1);
         Thread t4 = new Thread(capibara2);
         t3.setDaemon(true);
@@ -98,10 +104,10 @@ public class Controlador implements Initializable, AnimalListener {
         caminoConejo.setText("");
         capibaraImagen1.setVisible(false);
         capibaraImagen2.setVisible(false);
-        capibaraImagen2.setX(0);
-        capibaraImagen2.setX(0);
-        conejoImagen.setX(0);
-        tortugaImagen.setX(0);
+        capibaraImagen2.setTranslateX(0);
+        capibaraImagen2.setTranslateX(0);
+        conejoImagen.setTranslateX(0);
+        tortugaImagen.setTranslateX(0);
 
 
     }
