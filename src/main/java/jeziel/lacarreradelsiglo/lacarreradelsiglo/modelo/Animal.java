@@ -1,7 +1,7 @@
 package jeziel.lacarreradelsiglo.lacarreradelsiglo.modelo;
 import java.util.Random;
 
-public class Animal {
+public class Animal implements Runnable {
     String nombre = "";
     int avance = 0;
     Random random = new Random(System.currentTimeMillis());
@@ -26,9 +26,10 @@ public class Animal {
         this.avance = avance;
     }
 
-    public void avanzar(){
+    @Override
+    public void run() {
         while (this.avance<=471){
-            this.avance+=random.nextInt();
+            this.avance+=random.nextInt(21);
         }
     }
 }
