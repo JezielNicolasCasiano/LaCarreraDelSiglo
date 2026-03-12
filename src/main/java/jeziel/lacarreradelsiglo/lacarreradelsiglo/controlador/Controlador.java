@@ -43,7 +43,7 @@ public class Controlador implements Initializable, AnimalListener {
             if(Objects.equals(nombre, "Conejo") || Objects.equals(nombre, "Tortuga")){
                 caminoCompetidores.get(nombre).setText("*".repeat(Math.max(0,(int)avance/8)));
             }else{
-                caminoCompetidores.get(nombre).setText(" ".repeat(Math.max(0,(int)avance/8)));
+                caminoCompetidores.get(nombre).setText(" ".repeat(Math.max(0,(int)avance/16)));
             }
         });
     }
@@ -64,7 +64,7 @@ public class Controlador implements Initializable, AnimalListener {
         imagenesCompetidores.put("Conejo",conejoImagen);
         imagenesCompetidores.put("Tortuga", tortugaImagen);
         imagenesCompetidores.put("capibara1",capibaraImagen1);
-        imagenesCompetidores.put("capibara2",capibaraImagen1);
+        imagenesCompetidores.put("capibara2",capibaraImagen2);
         caminoCompetidores.put("Conejo",caminoConejo);
         caminoCompetidores.put("Tortuga", caminoTortuga);
         caminoCompetidores.put("capibara1",caminoConejo);
@@ -80,16 +80,19 @@ public class Controlador implements Initializable, AnimalListener {
 
     @FXML
     public void clickEmpezar(){
+        ganador.setText("");
+        caminoConejo.setText("");
+        caminoConejo.setText("");
         Thread t1 = new Thread(conejo);
         Thread t2 = new Thread(tortuga);
         t1.start();
         t2.start();
+        capibaraImagen1.setVisible(false);
+        capibaraImagen2.setVisible(false);
     }
 
     @FXML
     public void clickReiniciar(){
-        ganador.setText("");
-
         capibaraImagen1.setVisible(true);
         capibaraImagen2.setVisible(true);
         capibaraImagen1.setManaged(true);
@@ -100,10 +103,8 @@ public class Controlador implements Initializable, AnimalListener {
         t4.setDaemon(true);
         t3.start();
         t4.start();
-        caminoConejo.setText("");
-        caminoConejo.setText("");
-        capibaraImagen1.setVisible(false);
-        capibaraImagen2.setVisible(false);
+
+
         capibaraImagen2.setTranslateX(0);
         capibaraImagen2.setTranslateX(0);
         conejoImagen.setTranslateX(0);
