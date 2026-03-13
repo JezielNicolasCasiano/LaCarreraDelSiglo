@@ -20,6 +20,7 @@ public class Controlador implements Initializable, AnimalListener {
     Animal capibara2;
     private final Map<String, ImageView> imagenesCompetidores = new HashMap<>();
     private final Map<String, Label> caminoCompetidores = new HashMap<>();
+    StringBuilder sb;
 
     @FXML
     private Label ganador;
@@ -43,7 +44,8 @@ public class Controlador implements Initializable, AnimalListener {
             if(Objects.equals(nombre, "Conejo") || Objects.equals(nombre, "Tortuga")){
                 caminoCompetidores.get(nombre).setText("*".repeat(Math.max(0,(int)avance/8)));
             }else{
-                caminoCompetidores.get(nombre).setText(" ".repeat(Math.max(0,(int)avance/16)));
+                sb = new StringBuilder(caminoCompetidores.get(nombre).getText());
+                caminoCompetidores.get(nombre).setText(" ".repeat(Math.max(0,(int)avance/32)) + caminoCompetidores.get(nombre).getText());
             }
         });
     }
