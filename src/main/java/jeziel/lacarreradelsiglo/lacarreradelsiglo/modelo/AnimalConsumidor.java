@@ -7,12 +7,14 @@ public class AnimalConsumidor extends Animal {
 
     public AnimalConsumidor(String nombre, AnimalListener listener, BufferInterface buffer) {
         super(nombre, listener);
+        this.buffer = buffer;
     }
 
     @Override
     public void run() {
         while (this.getAvance() <= 571) {
             this.setAvance(this.getAvance() + this.buffer.get());
+            System.out.print(getAvance());
             try {
                 Thread.sleep(150);
             } catch (InterruptedException e) {

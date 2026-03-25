@@ -86,6 +86,7 @@ public class Controlador implements Initializable, AnimalListener {
 
     @FXML
     public void clickEmpezar() {
+
         ganador.setText("");
         caminoConejo.setText("");
         caminoTortuga.setText("");
@@ -101,8 +102,9 @@ public class Controlador implements Initializable, AnimalListener {
         tortugaImagen.setTranslateX(0);
         capibaraImagen1.setTranslateX(0);
         capibaraImagen2.setTranslateX(0);
+        Thread t1 = new Thread(planta);
+        t1.start();
 
-        CompletableFuture.runAsync(planta);
         CompletableFuture<Void> carreraConejo = CompletableFuture.runAsync(conejo);
         CompletableFuture<Void> carreraTortuga = CompletableFuture.runAsync(tortuga);
 
