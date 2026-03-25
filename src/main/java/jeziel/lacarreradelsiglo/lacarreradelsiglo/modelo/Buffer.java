@@ -13,7 +13,7 @@ public class Buffer implements BufferInterface{
 
         }
         avaliable = false;
-        notify(); //Le avisa al productor que la caja ya esta vacia
+        notifyAll(); //Le avisa al productor que la caja ya esta vacia
         return content;
     }
 
@@ -26,7 +26,7 @@ public class Buffer implements BufferInterface{
         }
         content = value;
         avaliable = true;
-        notify(); //Le avisa al consumidor que hay algo en la caja
+        notifyAll(); //Le avisa al consumidor que hay algo en la caja
     }
 
 }

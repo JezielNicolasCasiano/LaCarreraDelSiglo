@@ -16,8 +16,12 @@ public class AnimalProductor implements Runnable{
 
     @Override
     public void run() {
-        numero = random.nextInt(21);
-        random.setSeed(System.currentTimeMillis());
-        buffer.put(numero);
+        random = new Random();
+        while(true){
+            numero = random.nextInt(21);
+            random.setSeed(System.currentTimeMillis());
+            buffer.put(numero);
+
+        }
     }
 }

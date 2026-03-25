@@ -102,6 +102,7 @@ public class Controlador implements Initializable, AnimalListener {
         capibaraImagen1.setTranslateX(0);
         capibaraImagen2.setTranslateX(0);
 
+        CompletableFuture.runAsync(planta);
         CompletableFuture<Void> carreraConejo = CompletableFuture.runAsync(conejo);
         CompletableFuture<Void> carreraTortuga = CompletableFuture.runAsync(tortuga);
 
