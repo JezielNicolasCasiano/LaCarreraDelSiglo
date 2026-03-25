@@ -7,14 +7,37 @@ public class Animal implements Runnable {
     private String nombre;
     private int avance = 0;
     private AnimalListener listener;
-    Random random = new Random(System.currentTimeMillis());
+    private Random random = new Random(System.currentTimeMillis());
 
 
     public Animal(String nombre, AnimalListener listener) {
         this.nombre = nombre;
         this.listener = listener;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public AnimalListener getListener() {
+        return listener;
+    }
+
+    public void setListener(AnimalListener listener) {
+        this.listener = listener;
+    }
+
+    public int getAvance() {
+        return avance;
+    }
+
+    public void setAvance(int avance) {
+        this.avance = avance;
+    }
 
     @Override
     public void run() {
